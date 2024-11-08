@@ -1,0 +1,16 @@
+name: react-app
+on: push
+jobs:
+  test:
+    runs_on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Dependencies
+        run: npm i
+      - name: Test
+        run: npm run test
